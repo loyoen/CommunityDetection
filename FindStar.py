@@ -22,7 +22,7 @@ def FindStarReadjson(filename):
     f.close()
     StarFilename = "stars.txt"
     outfile = open(StarFilename,"w+")
-    StarLinJieNum = Cnt / 400
+    StarLinJieNum = Cnt / 300
     for item in DictMap:
         if DictMap[item]>StarLinJieNum:
             outfile.write(str(item)+"\n")

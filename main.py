@@ -9,6 +9,7 @@ def mainfunc(filename):
     PartNum = len(StarDict)/20
     UbFactor = 10
     CmdLine = ".\hmetis-1.5.3-WIN32\hmetis-1.5.3-WIN32\hmetis.exe %s %d %d 10 1 1 1 0 0" %(GraphName,PartNum,UbFactor)
+    print CmdLine
     os.system(CmdLine)
     PartFileName = GraphName + ".part." + str(PartNum)
     print PartFileName

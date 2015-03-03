@@ -16,6 +16,11 @@ def CreateGraph(StarDict,filename):
     Cnt = 1
     GraphName = "graph.hgr"
     graph = open(GraphName,"w")
+    for i in range(0,100):
+        graph.write(" ")
+    graph.write("\n")
+    EdgeNum = 0
+    NodeNum = 0
     while line:
         try:
             s = json.loads(line)
@@ -53,9 +58,13 @@ def CreateGraph(StarDict,filename):
             for node in edgelist:
                 graph.write(str(node)+" ")
             graph.write("\n")
+            EdgeNum += 1
         line = f.readline()
         
     f.close()
+    graph.seek(0)
+    NodeNum = len(StarDict)
+    graph.write(str(EdgeNum)+" "+str(NodeNum))
     graph.close()
     
     idFile = open("ID.json","w")
